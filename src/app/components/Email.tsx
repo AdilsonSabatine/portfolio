@@ -1,10 +1,13 @@
 "use client"
+import React, { useState } from "react";
 import GithubIcon from "../../../public/svgs/github-icon.svg";
 import LinkedinIcon from "../../../public/svgs/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 
 const Email = () => {
+    const [emailSubmitted, setEmailSubmitted] = useState(false);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = {
@@ -25,6 +28,7 @@ const Email = () => {
         const resData = await response.json();
         console.log(resData);
         if (response.status === 200) {
+            setEmailSubmitted(true);
             console.log('Message sent')
         }
     }
@@ -87,6 +91,15 @@ const Email = () => {
                         className="bg-red-700 hover:bg-red-800 text-white font-medium py-2.5 px-5 w-full rounded-lg"
                     >
                         Send Message
+                    </button>
+                    <button>
+                        {
+                            emailSubmitted && (
+                                <p className="text-green-500 text-sm mt-2">
+                                    Email sent successfully!
+                                </p>
+                            )
+                        }
                     </button>
                 </form>
             </div>
