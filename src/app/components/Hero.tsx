@@ -28,9 +28,8 @@ const Hero = () => {
                         />
                     </h1>
                     <p className="text-[#ADB7BE] sm:text-base text-lg lg:text-xl mb-6">
-                        Olá! Meu nome é Adilson e sou um desenvolvedor de software apaixonado por transformar ideias em soluções digitais.
-                        Com experiência em desenvolvimento backend e chatbots, atualmente procurando uma transição para fullstack.
-                        Trabalhei em diversos projetos web e chatbots para atendimento ao cliente.
+                        Sou um desenvolvedor apaixonado por transformar ideias em soluções digitais.
+                        Tenho experiência em desenvolvimento backend e chatbots, atualmente buscando uma transição para fullstack.
                     </p>
                     <div>
                         <Link
