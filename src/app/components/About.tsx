@@ -11,6 +11,10 @@ const TAB_DATA = [
             <ul className="list-disc pl-2">
                 <li>Javascript</li>
                 <li>Java Spring Boot</li>
+                <li>SQL</li>
+                <li>AWS (SQS, Lambda)</li>
+                <li>Google Cloud</li>
+                <li>IBM Watson</li>
             </ul>
         ),
     },
@@ -19,8 +23,8 @@ const TAB_DATA = [
         id: "education",
         content: (
             <ul className="list-disc pl-2">
-                <li>ETEC Hortolandia - IT - Associate</li>
-                <li>FATEC Hortolandia - IT Management - Technology</li>
+                <li>ETEC Hortolandia - Informatico - Técnico</li>
+                <li>FATEC Hortolandia - Gestão de TI - Técnologo</li>
             </ul>
         ),
     },
@@ -29,6 +33,7 @@ const TAB_DATA = [
         id: "experience",
         content: (
             <ul className="list-disc pl-2">
+                <li>Customer Service</li>
                 <li>Backend Development</li>
                 <li>Chatbots 🤖</li>
             </ul>
@@ -56,14 +61,15 @@ const About = () => {
                     height={500}
                 />
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                    <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+                    <h2 className="text-4xl font-bold text-white mb-4">Sobre mim</h2>
                     <p className="text-base lg:text-lg">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum rerum qui sapiente labore esse, tempora culpa consectetur quo quaerat suscipit quibusdam! Blanditiis molestiae ducimus ea dolore, culpa obcaecati similique impedit.
+                        Comecei minha carreira trabalhando com curadoria de chatbots e nesse período tive a oportunidade de trabalhar no backend que integrava os chatbots a ITSMs e APIs. 
+                        Depois de ganhar experiência com desenvolvimento passei a atuar em outros projetos web, sempre atuando no backend criando APIs.
                     </p>
                     <div className="flex flex-row mt-8">
                         <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>Skills</TabButton>
-                        <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>Education</TabButton>
-                        <TabButton selectTab={() => handleTabChange("experience")} active={tab === "experience"}>Experience</TabButton>
+                        <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>Educação</TabButton>
+                        <TabButton selectTab={() => handleTabChange("experience")} active={tab === "experience"}>Experiência</TabButton>
                     </div>
                     <div className="mt-8">
                         {TAB_DATA.find((t) => t.id === tab).content}
