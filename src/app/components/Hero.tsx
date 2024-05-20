@@ -2,20 +2,24 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 
 const Hero = () => {
+
     return (
         <section>
             <div className="grid grid-cols-1 sm:grid-cols-12">
                 <div className="col-span-7 place-self-center text-center sm-text-left">
                     <h1 className="text-white mb-4 text-4xl sm-text-5xl lg:text-6xl font-extrabold">
-                        Hello, I&apos;m { }
+                        Olá, sou { }
                         <br />
                         <TypeAnimation
                             sequence={[
                                 'Adilson',
                                 1000,
                                 'Web Developer',
+                                1000,
+                                'Backend Developer',
                                 1000,
                             ]}
                             wrapper="span"
@@ -24,11 +28,26 @@ const Hero = () => {
                         />
                     </h1>
                     <p className="text-[#ADB7BE] sm:text-base text-lg lg:text-xl mb-6">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis perspiciatis dignissimos pariatur. Illum, voluptatum. Asperiores alias recusandae nam vero facilis! Quod quaerat suscipit exercitationem voluptates expedita odit id. Ipsam, vitae.
+                        Olá! Meu nome é Adilson e sou um desenvolvedor de software apaixonado por transformar ideias em soluções digitais.
+                        Com experiência em desenvolvimento backend e chatbots, atualmente procurando uma transição para fullstack.
+                        Trabalhei em diversos projetos web e chatbots para atendimento ao cliente.
                     </p>
                     <div>
-                        <button className="px-6 py-3 w-full rounded-full sm:w-fit mr-4 bg-white hover:bg-slate-200 text-black m-3">Hire Me</button>
-                        <button className="px-6 py-3 w-full rounded-full sm:w-fit mr-4 bg-transparent hover:bg-slate-800 text-white border border-white m-3">Download CV</button>
+                        <Link
+                            href="https://www.linkedin.com/in/adilson-s-jr/"
+                            download
+                            target="/"
+                            className="px-6 py-3 w-full rounded-full sm:w-fit mr-4 bg-white hover:bg-slate-200 text-black m-3">
+                            Me contrate
+                        </Link>
+                        <Link
+                            href="/documents/CV_AdilsonSabatineJr.pdf"
+                            download
+                            target="/"
+                            className="px-6 py-3 w-full rounded-full sm:w-fit mr-4 bg-transparent hover:bg-slate-800 text-white border border-white m-3"
+                        >
+                            Download CV
+                        </Link>
                     </div>
                 </div>
                 <div className="col-span-5 place-self-center mt-4 lg:mt-0">
