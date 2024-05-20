@@ -36,14 +36,14 @@ const Hero = () => {
                             href="https://www.linkedin.com/in/adilson-s-jr/"
                             download
                             target="/"
-                            className="px-6 py-3 w-full rounded-full sm:w-fit mr-4 bg-white hover:bg-slate-200 text-black m-3">
+                            className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-slate-200 text-black m-3">
                             Me contrate
                         </Link>
                         <Link
                             href="/documents/CV_AdilsonSabatineJr.pdf"
                             download
                             target="/"
-                            className="px-6 py-3 w-full rounded-full sm:w-fit mr-4 bg-transparent hover:bg-slate-800 text-white border border-white m-3"
+                            className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent hover:bg-slate-800 text-white border border-white m-3"
                         >
                             Download CV
                         </Link>
