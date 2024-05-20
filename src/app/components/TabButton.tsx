@@ -1,6 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-const TabButton = ({ active, selectTab, children }) => {
+interface TabParams {
+    active: boolean;
+    selectTab: () => void;
+    children: ReactNode;
+}
+
+const TabButton = ({ active, selectTab, children }: TabParams) => {
     const buttonClasses = active ? "text-white border-b border-[#4c9ae7]" : "text-[#ABB7BE]"
 
     return (

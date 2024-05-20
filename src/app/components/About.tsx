@@ -45,7 +45,7 @@ const About = () => {
     const [tab, setTab] = useState("skills");
     const [isPending, startTransition] = useTransition();
 
-    const handleTabChange = (id) => {
+    const handleTabChange = (id: string) => {
         startTransition(() => {
             setTab(id);
         });
@@ -63,7 +63,7 @@ const About = () => {
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                     <h2 className="text-4xl font-bold text-white mb-4">Sobre mim</h2>
                     <p className="text-base lg:text-lg">
-                        Comecei minha carreira trabalhando com curadoria de chatbots e nesse período tive a oportunidade de trabalhar no backend que integrava os chatbots a ITSMs e APIs. 
+                        Comecei minha carreira trabalhando com curadoria de chatbots e nesse período tive a oportunidade de trabalhar no backend que integrava os chatbots a ITSMs e APIs.
                         Depois de ganhar experiência com desenvolvimento passei a atuar em outros projetos web, sempre atuando no backend criando APIs.
                     </p>
                     <div className="flex flex-row mt-8">
@@ -72,7 +72,7 @@ const About = () => {
                         <TabButton selectTab={() => handleTabChange("experience")} active={tab === "experience"}>Experiência</TabButton>
                     </div>
                     <div className="mt-8">
-                        {TAB_DATA.find((t) => t.id === tab).content}
+                        {TAB_DATA && tab && TAB_DATA.find((t) => t.id === tab)?.content}
                     </div>
                 </div>
             </div>

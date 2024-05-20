@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import GithubIcon from "../../../public/svgs/github-icon.svg";
 import LinkedinIcon from "../../../public/svgs/linkedin-icon.svg";
 import Link from "next/link";
@@ -8,14 +8,19 @@ import Image from "next/image";
 const Email = () => {
     const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+
         const data = {
-            email: e.target.email.value,
-            subject: e.target.subject.value,
-            message: e.target.message.value,
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
         }
+
         const endpoint = "/api/send";
+        
         const options = {
             method: 'POST',
             headers: {

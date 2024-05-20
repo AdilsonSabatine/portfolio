@@ -2,7 +2,15 @@ import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const ProjectCard = ({ imageUrl, title, description, gitUrl, previewUrl }) => {
+interface CardParams {
+  imageUrl: string,
+  title: string,
+  description: string,
+  gitUrl: string,
+  previewUrl: string
+}
+
+const ProjectCard = ({ imageUrl, title, description, gitUrl, previewUrl }: CardParams) => {
   return (
     <div>
       <div
