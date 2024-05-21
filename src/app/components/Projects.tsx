@@ -6,11 +6,20 @@ import ProjectTag from "./ProjectTag";
 const PROJECT_DATA = [
     {
         id: 1,
+        title: "Portfolio",
+        description: "Esse portifolio. Meu primeiro projeto usando Next.js, feito como forma de estudo.",
+        image: "/images/projects/portfolio.png",
+        tag: ["All", "Web", "Mobile"],
+        gitUrl: "https://github.com/AdilsonSabatine/portfolio",
+        previewUrl: "https://sabatinedev.vercel.app/",
+    },
+    {
+        id: 2,
         title: "Music Manager",
-        description: "A simple app to manage e import/export music from Spotify to Youtube and vice versa",
+        description: "Ainda em desenvolvimento, um web app simples para gerenciar e importar exportar músicas curtidas do Spotify para o Youtube Music e vice versa.",
         image: "/images/projects/musicmanager.jpg",
-        tag: ["All"],
-        gitUrl: "/",
+        tag: ["Web", "All"],
+        gitUrl: "https://github.com/AdilsonSabatine/music-library",
         previewUrl: "/",
     }
 ]
