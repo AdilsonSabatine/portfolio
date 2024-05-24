@@ -3,6 +3,11 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
+import { Inconsolata } from "next/font/google";
+
+
+const inconsolata = Inconsolata({ subsets: ["latin"] });
+
 
 const Hero = () => {
 
@@ -25,10 +30,11 @@ const Hero = () => {
                             wrapper="span"
                             speed={50}
                             repeat={Infinity}
+                            className={inconsolata.className}
                         />
                     </h1>
                     <p className="text-[#ADB7BE] sm:text-base text-lg lg:text-xl mb-6">
-                        Sou um desenvolvedor apaixonado por transformar ideias em soluções digitais.
+                        Apaixonado por transformar ideias em soluções digitais.
                         Tenho experiência em desenvolvimento backend e chatbots, atualmente buscando uma transição para fullstack.
                     </p>
                     <div>
@@ -50,12 +56,13 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-                    <div className="rounded-full bg-[#181818] w-[400px] h-[400px] relative overflow-hidden">
+                    <div className="rounded-full relative overflow-hidden">
                         <Image
+                            className=""
                             src="/images/me.png"
                             alt="me"
-                            width={500}
-                            height={500}
+                            width={400}
+                            height={400}
                         />
                     </div>
                 </div>
