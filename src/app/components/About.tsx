@@ -2,6 +2,7 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import computer from "../../../public/computer.gif";
 
 const TAB_DATA = [
     {
@@ -52,17 +53,17 @@ const About = () => {
     };
 
     return (
-        <section className="text-white" id="about">
+        <section className="text-[#1a1a1a] bg-[#f0f0f0] rounded-lg mt-10 p-4" id="about">
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py16 xl:px-16">
                 <Image
-                    src="/images/computer.jpeg"
+                    src={computer}
                     alt="me"
                     width={500}
                     height={500}
                 />
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                    <h2 className="text-4xl font-bold text-white mb-4">Sobre mim</h2>
-                    <p className="text-base lg:text-lg">
+                    <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4">Sobre mim</h2>
+                    <p className="text-[#1a1a1a] lg:text-lg">
                         Comecei minha carreira trabalhando com curadoria de chatbots e nesse período tive a oportunidade de trabalhar no backend que integrava os chatbots a ITSMs e APIs.
                         Depois de ganhar experiência com desenvolvimento passei a atuar em outros projetos web, sempre atuando no backend criando APIs.
                     </p>

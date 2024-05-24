@@ -7,11 +7,11 @@ interface TabParams {
 }
 
 const TabButton = ({ active, selectTab, children }: TabParams) => {
-    const buttonClasses = active ? "text-white border-b border-[#4c9ae7]" : "text-[#ABB7BE]"
+    const buttonClasses = active ? "text-[#1a1a1a] border-b border-[#4c9ae7]" : "text-[#a1a1a1]"
 
     return (
         <button onClick={selectTab}>
-            <p className={`mr-3 font-semibold hover:text-white ${buttonClasses}`}>
+            <p className={`mr-3 font-semibold hover:text-1a1a1a ${buttonClasses}`}>
                 {children}
             </p>
         </button>
