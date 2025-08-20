@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className='scroll-smooth' style={{ scrollBehavior: 'smooth' }}>
-      <body className={montserrat.className}><LanguageProvider>{children}</LanguageProvider></body>
+      <body className={montserrat.className}><LanguageProvider>3{children}</LanguageProvider></body>
     </html>
   );
 }

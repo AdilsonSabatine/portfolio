@@ -1,6 +1,6 @@
 {
     "about": {
-        "info": "I began my career curating chatbots, and during that time I had the opportunity to work on the backend, integrating chatbots with ITSMs and APIs. After gaining development experience, I moved on to other web projects, always working on the backend, creating APIs.",
+        "info": "I started my career working with chatbot curation and during this time I had the opportunity to work on the backend that integrated chatbots with ITSMs and APIs. After gaining experience in development, I began working on other web projects, always focusing on backend API development.",
         "tabs": {
             "skills": "Skills",
             "education": "Education",
@@ -8,9 +8,46 @@
         },
         "title": "About Me"
     },
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
     "hero": {
         "title": "Hello, I am",
-        "subtitle": "Backend Developer",
-        "description": "Specialized in creating robust and efficient APIs for web applications."
+        "description": "Passionate about transforming ideas into digital solutions. I have experience in backend development and chatbots, currently seeking a transition to fullstack.",
+        "linkedin": "Hire Me"
+    },
+    "contact": {
+        "title": "Let's Connect",
+        "description": "I am always open to new opportunities and collaborations. If you have an interesting idea or project, don't hesitate to get in touch!",
+        "email": "Email",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "form": {
+            "name": "Name",
+            "email": {
+                "label": "Email",
+                "placeholder": "name@email.com"
+            },
+            "subject": {
+                "label": "Subject",
+                "placeholder": "Type the subject here..."
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Write your message here..."
+            },
+            "send": "Send"
+        }
+    },
+    "projects":{
+        "title": "My Projects",
+        "tags": {
+            "all": "All",
+            "web": "Web",
+            "mobile": "Mobile"
+        }
     }
 }

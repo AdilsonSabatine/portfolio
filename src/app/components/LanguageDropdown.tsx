@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
-import Image from "next/image";
 
 const languages = [
     { code: "en", label: "English", flag: "images/flags/en.png" },

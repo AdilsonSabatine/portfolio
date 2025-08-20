@@ -1,11 +1,15 @@
 "use client"
 import React, { FormEvent, useState } from "react";
-import GithubIcon from "../../../public/svgs/github-icon.svg";
-import LinkedinIcon from "../../../public/svgs/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "../context/LanguageContext";
+
+
+const GithubIcon = "/svgs/github-icon.svg";
+const LinkedinIcon = "/svgs/linkedin-icon.svg";
 
 const Email = () => {
+    const { messages } = useLanguage();
     const [emailSubmitted, setEmailSubmitted] = useState(false);
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -20,7 +24,7 @@ const Email = () => {
         }
 
         const endpoint = "/api/send";
-        
+
         const options = {
             method: 'POST',
             headers: {
@@ -41,17 +45,16 @@ const Email = () => {
     return (
         <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-6 relative" id="contact">
             <div className="z-10">
-                <h5 className="text-xl font-bold text-white my-2">Let&apos;s Connect</h5>
+                <h5 className="text-xl font-bold text-white my-2">{messages.contact.title}</h5>
                 <p className="text-[#ADB7BE] mb-4 max-w-md">
-                    Atualmente estou procurando novas oportunidades, meu inbox está sempre aberto.
-                    Se você tem uma pergunta ou quer só falor um oi, farei meu melhor pra entrar contato com você!
+                    {messages.contact.description}
                 </p>
                 <div className="socials flex flex-row gap-2">
                     <Link href={"https://github.com/AdilsonSabatine"} target="/">
-                        <Image src={GithubIcon} alt={"Github Icon"} />
+                        <Image src={GithubIcon} height={64} width={64} alt={"Github Icon"} />
                     </Link>
                     <Link href={"https://www.linkedin.com/in/adilson-s-jr/"} target="/">
-                        <Image src={LinkedinIcon} alt={"Linkedin Icon"} />
+                        <Image src={LinkedinIcon} height={64} width={64} alt={"Linkedin Icon"} />
                     </Link>
                 </div>
             </div>
@@ -59,41 +62,41 @@ const Email = () => {
             <div>
                 <form className="flex flex-col" onSubmit={handleSubmit}>
                     <div className="mb-6">
-                        <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">Your email</label>
+                        <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">{messages.contact.form.email.label}</label>
                         <input
                             type="text"
                             name="email"
                             id="email"
                             required
                             className="bg-[#18191E] border-[#33352F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                            placeholder="sindri@gmail.com"
+                            placeholder={messages.contact.form.email.placeholder}
                         />
                     </div>
                     <div className="mb-6">
-                        <label htmlFor="subject" className="text-white block mb-2 text-sm font-medium">Subject</label>
+                        <label htmlFor="subject" className="text-white block mb-2 text-sm font-medium">{messages.contact.form.subject.label}</label>
                         <input
                             type="text"
                             name="subject"
                             id="subject"
                             required
                             className="bg-[#18191E] border-[#33352F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                            placeholder="Só falando um oi!"
+                            placeholder={messages.contact.form.subject.placeholder}
                         />
                     </div>
                     <div className="mb-6">
-                        <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">Message</label>
+                        <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">{messages.contact.form.message.label}</label>
                         <textarea
                             name="message"
                             id="message"
                             className="bg-[#18191E] border-[#33352F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                            placeholder="Vamos falar sobre"
+                            placeholder={messages.contact.form.message.placeholder}
                         />
                     </div>
                     <button
                         type="submit"
                         className="bg-[#4c9ae7] hover:bg-[#358ce3] text-white font-medium py-2.5 px-5 w-full rounded-lg"
                     >
-                        Send Message
+                        {messages.contact.form.send}
                     </button>
                     <button>
                         {

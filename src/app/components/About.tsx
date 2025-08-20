@@ -3,9 +3,8 @@ import React, { useTransition, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import Image from "next/image";
 import TabButton from "./TabButton";
+
 const computer = "/computer.gif";
-
-
 const TAB_DATA = [
     {
         title: "Skills",

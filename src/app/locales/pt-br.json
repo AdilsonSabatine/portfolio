@@ -8,9 +8,42 @@
         },
         "title": "Sobre mim"
     },
+    "navbar": {
+        "home": "Início",
+        "about": "Sobre",
+        "projects": "Projetos",
+        "contact": "Contato"
+    },
     "hero": {
         "title": "Olá, eu sou o",
-        "subtitle": "Desenvolvedor Backend",
-        "description": "Especializado em criar APIs robustas e eficientes para aplicações web."
+        "description": "Apaixonado por transformar ideias em soluções digitais. Tenho experiência em desenvolvimento backend e chatbots, atualmente buscando uma transição para fullstack.",
+        "linkedin": "Me contrate"
+    },
+    "contact": {
+        "title": "Vamos nos conectar",
+        "description": "Estou sempre aberto a novas oportunidades e colaborações. Se você tem uma ideia ou projeto interessante, não hesite em entrar em contato!",
+        "form": {
+            "email": {
+                "label": "Email",
+                "placeholder": "nome@email.com"
+            },
+            "subject": {
+                "label": "Assunto",
+                "placeholder": "Digite o assunto aqui..."
+            },
+            "message": {
+                "label": "Mensagem",
+                "placeholder": "Escreva sua mensagem aqui..."
+            },
+            "send": "Enviar"
+        }
+    },
+    "projects": {
+        "title": "Meus projetos",
+        "tags": {
+            "all": "Todos",
+            "web": "Web",
+            "mobile": "Mobile"
+        }
     }
 }

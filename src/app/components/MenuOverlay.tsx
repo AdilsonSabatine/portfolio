@@ -1,5 +1,6 @@
 import React from "react";
 import NavLink from "./NavLink";
+import LanguageDropdown from "./LanguageDropdown";
 
 interface Link {
     title: string;
@@ -14,6 +15,7 @@ const MenuOverlay = ({ links }: { links: Link[] }) => {
                     <NavLink href={link.path} title={link.title} />
                 </li>
             ))}
+            <LanguageDropdown />
         </ul>
     );
 };

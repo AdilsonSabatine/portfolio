@@ -7,25 +7,26 @@ import MenuOverlay from "./MenuOverlay";
 import { useLanguage } from "../context/LanguageContext";
 import LanguageDropdown from "./LanguageDropdown";
 
-const navLinks = [
-    {
-        title: "Sobre",
-        path: "#about",
-    },
-    {
-        title: "Projetos",
-        path: "#projects",
-    },
-    {
-        title: "Contato",
-        path: "#contact",
-    },
-];
+
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
+    const { messages } = useLanguage();
 
-    const { locale, setLocale } = useLanguage();
+    const navLinks = [
+    {
+        title: messages.navbar.about,
+        path: "#about",
+    },
+    {
+        title: messages.navbar.projects,
+        path: "#projects",
+    },
+    {
+        title: messages.navbar.contact,
+        path: "#contact",
+    },
+];
 
     return (
         <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
