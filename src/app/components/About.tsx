@@ -1,8 +1,10 @@
 "use client";
 import React, { useTransition, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 import Image from "next/image";
 import TabButton from "./TabButton";
-import computer from "../../../public/computer.gif";
+const computer = "/computer.gif";
+
 
 const TAB_DATA = [
     {
@@ -43,6 +45,7 @@ const TAB_DATA = [
 ]
 
 const About = () => {
+    const { messages } = useLanguage();
     const [tab, setTab] = useState("skills");
     const [isPending, startTransition] = useTransition();
 
@@ -62,15 +65,14 @@ const About = () => {
                     height={500}
                 />
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                    <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4">Sobre mim</h2>
+                    <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4">{messages.about.title}</h2>
                     <p className="text-[#1a1a1a] lg:text-lg">
-                        Comecei minha carreira trabalhando com curadoria de chatbots e nesse período tive a oportunidade de trabalhar no backend que integrava os chatbots a ITSMs e APIs.
-                        Depois de ganhar experiência com desenvolvimento passei a atuar em outros projetos web, sempre atuando no backend criando APIs.
+                        {messages.about.info}
                     </p>
                     <div className="flex flex-row mt-8">
-                        <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>Skills</TabButton>
-                        <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>Educação</TabButton>
-                        <TabButton selectTab={() => handleTabChange("experience")} active={tab === "experience"}>Experiência</TabButton>
+                        <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>{messages.about.tabs.skills}</TabButton>
+                        <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>{messages.about.tabs.education}</TabButton>
+                        <TabButton selectTab={() => handleTabChange("experience")} active={tab === "experience"}>{messages.about.tabs.experience}</TabButton>
                     </div>
                     <div className="mt-8">
                         {TAB_DATA && tab && TAB_DATA.find((t) => t.id === tab)?.content}

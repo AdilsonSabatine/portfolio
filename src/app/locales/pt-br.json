@@ -1,0 +1,16 @@
+{
+    "about": {
+        "info": "Comecei mnha carreira trabalhando com curadoria de chatbots e nesse período tive a oportunidade de trabalhar no backend que integrava os chatbots a ITSMs e APIs. Depois de ganhar experiência com desenvolvimento passei a atuar em outros projetos web, sempre atuando no backend criando APIs.",
+        "tabs": {
+            "skills": "Habilidades",
+            "education": "Educação",
+            "experience": "Experiência"
+        },
+        "title": "Sobre mim"
+    },
+    "hero": {
+        "title": "Olá, eu sou o",
+        "subtitle": "Desenvolvedor Backend",
+        "description": "Especializado em criar APIs robustas e eficientes para aplicações web."
+    }
+}

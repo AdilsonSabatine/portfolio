@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import { useLanguage } from "../context/LanguageContext";
+import LanguageDropdown from "./LanguageDropdown";
 
 const navLinks = [
     {
@@ -22,6 +24,8 @@ const navLinks = [
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
+
+    const { locale, setLocale } = useLanguage();
 
     return (
         <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
@@ -56,8 +60,10 @@ const Navbar = () => {
                                 <NavLink href={link.path} title={link.title} />
                             </li>
                         ))}
+                        <LanguageDropdown />
                     </ul>
                 </div>
+
             </div>
             {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
         </nav>
