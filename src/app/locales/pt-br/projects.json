@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Portfólio",
+    "description": "Esse portfólio. Meu primeiro projeto usando Next.js, feito como forma de estudo.",
+    "image": "/images/projects/portfolio.png",
+    "tag": ["Todos", "Web", "Mobile"],
+    "gitUrl": "https://github.com/AdilsonSabatine/portfolio",
+    "previewUrl": "https://sabatinedev.vercel.app/"
+  },
+  {
+    "id": 2,
+    "title": "Music Manager",
+    "description": "Ainda em desenvolvimento, um web app simples para gerenciar e importar/exportar músicas curtidas do Spotify para o YouTube Music e vice versa.",
+    "image": "/images/projects/musicmanager.jpg",
+    "tag": ["Web", "Todos"],
+    "gitUrl": "https://github.com/AdilsonSabatine/music-library",
+    "previewUrl": "/"
+  }
+]

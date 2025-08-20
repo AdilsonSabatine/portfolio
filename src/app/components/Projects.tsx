@@ -2,57 +2,39 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-
-const PROJECT_DATA = [
-    {
-        id: 1,
-        title: "Portfolio",
-        description: "Esse portifolio. Meu primeiro projeto usando Next.js, feito como forma de estudo.",
-        image: "/images/projects/portfolio.png",
-        tag: ["All", "Web", "Mobile"],
-        gitUrl: "https://github.com/AdilsonSabatine/portfolio",
-        previewUrl: "https://sabatinedev.vercel.app/",
-    },
-    {
-        id: 2,
-        title: "Music Manager",
-        description: "Ainda em desenvolvimento, um web app simples para gerenciar e importar exportar músicas curtidas do Spotify para o Youtube Music e vice versa.",
-        image: "/images/projects/musicmanager.jpg",
-        tag: ["Web", "All"],
-        gitUrl: "https://github.com/AdilsonSabatine/music-library",
-        previewUrl: "/",
-    }
-]
+import { useLanguage } from "../context/LanguageContext";
 
 const Projects = () => {
     const [tag, setTag] = useState("All");
+    
+  const { projects, texts } = useLanguage();
 
     const handleTagChange = (newTag: string) => {
         setTag(newTag);
     }
 
-    const filteredProjects = PROJECT_DATA.filter((project) =>
+    const filteredProjects = projects.filter((project) =>
         project.tag.includes(tag)
     );
 
     return (
         <div>
             <section id="projects">
-                <h2 className="text-center text-4xl font-bold text-white mt-7 md:mb-12">Meus projetos</h2>
+                <h2 className="text-center text-4xl font-bold text-white mt-7 md:mb-12">{texts.projects.title}</h2>
                 <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
                     <ProjectTag
                         onClick={handleTagChange}
-                        name="All"
+                        name={texts.projects.tags.all}
                         isSelected={tag === "All"}
                     />
                     <ProjectTag
                         onClick={handleTagChange}
-                        name="Web"
+                        name={texts.projects.tags.web}
                         isSelected={tag === "Web"}
                     />
                     <ProjectTag
                         onClick={handleTagChange}
-                        name="Mobile"
+                        name={texts.projects.tags.mobile}
                         isSelected={tag === "Mobile"}
                     />
                 </div>

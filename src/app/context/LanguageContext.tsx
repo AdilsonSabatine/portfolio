@@ -1,17 +1,25 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
+
+// Textos gerais
 import en from "../locales/en/texts.json";
 import pt from "../locales/pt-br/texts.json";
+
+// Projetos
+import enProjects from "../locales/en/projects.json";
+import ptProjects from "../locales/pt-br/projects.json";
 
 type Locale = "en" | "pt";
 
 type LanguageData = typeof en;
+type ProjectData = typeof enProjects;
 
 type LanguageContextType = {
   locale: Locale;
   setLocale: (l: Locale) => void;
   texts: LanguageData;
+  projects: ProjectData;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -22,9 +30,10 @@ export function LanguageProvider({ children }: Props) {
   const [locale, setLocale] = useState<Locale>("pt");
 
   const texts = locale === "pt" ? pt : en;
+  const projects = locale === "pt" ? ptProjects : enProjects;
 
   return (
-    <LanguageContext.Provider value={{ locale, setLocale, texts }}>
+    <LanguageContext.Provider value={{ locale, setLocale, texts, projects }}>
       {children}
     </LanguageContext.Provider>
   );
