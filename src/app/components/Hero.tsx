@@ -11,14 +11,14 @@ const inconsolata = Inconsolata({ subsets: ["latin"] });
 
 
 const Hero = () => {
-    const { messages } = useLanguage();
+    const { texts } = useLanguage();
 
     return (
         <section>
             <div className="grid grid-cols-1 sm:grid-cols-12">
                 <div className="col-span-7 place-self-center text-center sm-text-left">
                     <h1 className="mb-4 text-4xl sm-text-5xl lg:text-6xl font-extrabold">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4c9ae7] to-[#a5ccf3]">{messages.hero.title} { }</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4c9ae7] to-[#a5ccf3]">{texts.hero.title} { }</span>
                         <br />
                         <TypeAnimation
                             sequence={[
@@ -36,7 +36,7 @@ const Hero = () => {
                         />
                     </h1>
                     <p className="text-[#ADB7BE] sm:text-base text-lg lg:text-xl mb-6">
-                        {messages.hero.description}
+                        {texts.hero.description}
                     </p>
                     <div>
                         <Link
@@ -44,7 +44,7 @@ const Hero = () => {
                             download
                             target="/"
                             className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-slate-200 text-black m-3">
-                            {messages.hero.linkedin}
+                            {texts.hero.linkedin}
                         </Link>
                         <Link
                             href="/documents/CV_AdilsonSabatineJr.pdf"

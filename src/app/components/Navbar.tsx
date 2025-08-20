@@ -11,19 +11,19 @@ import LanguageDropdown from "./LanguageDropdown";
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
-    const { messages } = useLanguage();
+    const { texts } = useLanguage();
 
     const navLinks = [
     {
-        title: messages.navbar.about,
+        title: texts.navbar.about,
         path: "#about",
     },
     {
-        title: messages.navbar.projects,
+        title: texts.navbar.projects,
         path: "#projects",
     },
     {
-        title: messages.navbar.contact,
+        title: texts.navbar.contact,
         path: "#contact",
     },
 ];

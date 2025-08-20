@@ -44,7 +44,7 @@ const TAB_DATA = [
 ]
 
 const About = () => {
-    const { messages } = useLanguage();
+    const { texts } = useLanguage();
     const [tab, setTab] = useState("skills");
     const [isPending, startTransition] = useTransition();
 
@@ -64,14 +64,14 @@ const About = () => {
                     height={500}
                 />
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                    <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4">{messages.about.title}</h2>
+                    <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4">{texts.about.title}</h2>
                     <p className="text-[#1a1a1a] lg:text-lg">
-                        {messages.about.info}
+                        {texts.about.info}
                     </p>
                     <div className="flex flex-row mt-8">
-                        <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>{messages.about.tabs.skills}</TabButton>
-                        <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>{messages.about.tabs.education}</TabButton>
-                        <TabButton selectTab={() => handleTabChange("experience")} active={tab === "experience"}>{messages.about.tabs.experience}</TabButton>
+                        <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>{texts.about.tabs.skills}</TabButton>
+                        <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>{texts.about.tabs.education}</TabButton>
+                        <TabButton selectTab={() => handleTabChange("experience")} active={tab === "experience"}>{texts.about.tabs.experience}</TabButton>
                     </div>
                     <div className="mt-8">
                         {TAB_DATA && tab && TAB_DATA.find((t) => t.id === tab)?.content}
