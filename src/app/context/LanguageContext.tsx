@@ -12,13 +12,12 @@ import ptProjects from "../locales/pt-br/projects.json";
 
 type Locale = "en" | "pt";
 
-type LanguageData = typeof en;
 type ProjectData = typeof enProjects;
 
 type LanguageContextType = {
   locale: Locale;
   setLocale: (l: Locale) => void;
-  texts: LanguageData;
+  texts;
   projects: ProjectData;
 };
 
