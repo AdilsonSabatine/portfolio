@@ -4,6 +4,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Email from "./components/Email";
 import Footer from "./components/Footer";
+import ChatbotWidget from "./components/Widget";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Email />
       </div>
       <Footer />
+      <ChatbotWidget />
     </main>
   );
 }
