@@ -3,27 +3,22 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Message from './Message';
+import { useChatbot } from '../hooks/useChatbot';
 
 const ChatbotWidget = () => {
   const ChatbotIcon = "/svgs/chatbot.svg";
   const SendIcon = "/svgs/send-icon.svg";
 
+  const { messages, sendMessage, loading } = useChatbot();
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleChatbot = () => setIsOpen(!isOpen);
-  const [messages, setMessages] = useState<{ text: string; isUser?: boolean }[]>([]);
   const [input, setInput] = useState("");
 
   const handleSend = () => {
     if (input.trim() === "") return;
-    setMessages([...messages, { text: input, isUser: true }]);
+    sendMessage(input);
     setInput("");
-    // Simulate a response from the chatbot
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { text: "Resposta do chatbot", isUser: false },
-      ]);
-    }, 1000);
   };
 
   return (
@@ -42,6 +37,7 @@ const ChatbotWidget = () => {
             <input
               type="text"
               placeholder="Digite sua mensagem..."
+              disabled={loading}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               className="w-full px-3 py-2 border text-black mr-0 rounded-l-lg focus:outline-none"

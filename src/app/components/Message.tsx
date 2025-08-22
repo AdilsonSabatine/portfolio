@@ -6,6 +6,7 @@ type MessageProps = {
 };
 
 const Message: React.FC<MessageProps> = ({ text, isUser = false }) => {
+
     return (
         <div
             style={{
